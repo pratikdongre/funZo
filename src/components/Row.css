@@ -1,3 +1,7 @@
+/* .row_movie {
+  width: 100px;
+  height: 400px;
+} */
 .row {
   color: white;
   margin-left: 20px;
@@ -33,4 +37,33 @@
 
 .row_posterLarge:hover {
   transform: scale(1.09);
+}
+
+.row_posters {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  gap: 15px; /* Increase spacing between movies */
+}
+
+.row_movie {
+  flex: 0 0 auto;
+  width: 200px; /* Increase width */
+  text-align: center;
+}
+
+.row_poster {
+  width: 100%;
+  max-height: 320px; /* Increase height */
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.row_poster:hover {
+  transform: scale(1.1);
+}
+
+.row_posterLarge {
+  max-height: 400px; /* Increase size for large rows */
 }

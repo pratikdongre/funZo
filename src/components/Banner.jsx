@@ -13,7 +13,7 @@ export default function Banner() {
     const fetchData = async () => {
       try {
         const response = await axios.get(requests.fetchActionMovies);
-        const results = response.data.results;
+        const results = response.data.titles;
         if (results.length > 0) {
           setMovie(results[Math.floor(Math.random() * results.length)]);
         }
@@ -64,7 +64,7 @@ export default function Banner() {
             width: "100%",
             objectFit: "contain",
             backgroundSize: "cover",
-            backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
+            backgroundImage: `url("${movie.backdrop}")`,
             backgroundPosition: "center top",
             position: "relative",
           }}
@@ -82,9 +82,9 @@ export default function Banner() {
               </button>
               <button className="banner__button">My List</button>
             </div>
-            <h1 className="banner_description">
+            {/* <h1 className="banner_description">
               {truncate(movie?.overview, 150)}
-            </h1>
+            </h1> */}
           </div>
           <div className="banner__fadeBottom"></div>
         </header>
